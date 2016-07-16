@@ -39,7 +39,7 @@ defmodule Mailibex.Mixfile do
      description: description,
      package: package,
      compilers: [:iconv, :elixir, :app],
-     deps: []]
+     deps: deps]
   end
 
   def application do
@@ -61,5 +61,11 @@ defmodule Mailibex.Mixfile do
     SMTP client and server, to make it possible to use emails as a routable API for
     events and messages between your applications.
     """
+  end
+  
+  defp deps do
+    [
+      {:codepagex, "~> 0.1", optional: true}
+    ]
   end
 end
